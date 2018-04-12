@@ -481,6 +481,10 @@ namespace Echo
             {
                 return retry();
             }
+            catch (RedisServerException)
+            {
+                return retry();
+            }
         }
 
         static void Retry(Action f) =>
